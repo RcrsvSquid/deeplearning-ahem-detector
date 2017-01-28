@@ -59,6 +59,22 @@ from os.path import isfile, join, isdir
 
 import argparse
 
+# np.random.seed(1337)  # for reproducibility
+
+# network configuration
+batch_size = 32
+# number of epochs
+nb_epoch = 5
+# number of convolutional filters to use
+nb_filters = 32
+# number of classes
+nb_classes = 2
+# size of pooling area for max pooling
+pool_size = (2, 2)
+# convolution kernel size
+kernel_size = (3, 3)
+
+
 def make_model():
 	model = Sequential()
 	print(len(kernel_size))
@@ -97,21 +113,6 @@ def load_image(filename):
 	return img
 
 if __name__ == "__main__":
-	# np.random.seed(1337)  # for reproducibility
-
-	# network configuration
-	batch_size = 32
-	# number of epochs
-	nb_epoch = 5
-	# number of convolutional filters to use
-	nb_filters = 32
-	# number of classes
-	nb_classes = 2
-	# size of pooling area for max pooling
-	pool_size = (2, 2)
-	# convolution kernel size
-	kernel_size = (3, 3)
-
 	parser = argparse.ArgumentParser(description="Train ahem detector")
 	parser.add_argument("class_0", action="store")
 	parser.add_argument("class_1", action="store")
