@@ -87,7 +87,6 @@ if __name__ == "__main__":
 	audiosamples = raw_sounds[0]
 	numsamples = audiosamples.shape[0]
 
-	prev_idx = 0
 	windowsize = 6000
 
 	# 22050 samples == 0.5 sec

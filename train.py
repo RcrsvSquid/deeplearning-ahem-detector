@@ -74,7 +74,6 @@ pool_size = (2, 2)
 # convolution kernel size
 kernel_size = (3, 3)
 
-
 def make_model():
 	model = Sequential()
 	print(len(kernel_size))
@@ -204,11 +203,10 @@ if __name__ == "__main__":
 
 	model.compile(loss='binary_crossentropy', optimizer='adadelta', metrics=['accuracy'])
 
-	for _ in range(3):
-		model.fit(X_t, Y_t,
-				# validation_data=(X_test, Y_test),
-				batch_size=batch_size,
-				nb_epoch=1, verbose=1)
+	model.fit(X_t, Y_t,
+			# validation_data=(X_test, Y_test),
+			batch_size=batch_size,
+			nb_epoch=5, verbose=1)
 
 	predictions = model.predict_classes(X_test)
 
