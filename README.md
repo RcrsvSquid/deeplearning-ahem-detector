@@ -13,7 +13,7 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-1. Generate training data
+## 1. Generate training data
 To generate training data use [make_data.py](./make_data.py). Ahem detector is
 a binary classifier and therefore expects two classes for training.
 
@@ -30,7 +30,7 @@ $ python make_data.py data/ahem_data/
 $ python make_data.py data/clean_data/
 ```
 
-2. Train the model
+## 2. Train the model
 Once the images have been created we can train the model. Pass the same file
 path as used in [make_data.py](./make_data.py) above. Each should now contain a
 nested image directory.
@@ -39,7 +39,7 @@ nested image directory.
 $ python train [class_0 dir] [class_1 dir]
 ```
 
-3. Predict on new samples
+## 3. Predict on new samples
 Use the model weights from the previous step to predict the timestamps of "uhh"
 in a new file.
 
