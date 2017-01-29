@@ -5,13 +5,17 @@ forked from
 [Original Documentation](./ahem.md)
 
 ## Getting Started
-It is recommended to run this in a virtual environment
+It is recommended to run this in a virtual environment. If you are not using
+virtual environments skip the first two commands.
 
 ```bash
 $ virtualenv venv
 $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
+
+You will also need to [install
+tensorflow](https://www.tensorflow.org/get_started/os_setup).
 
 ## 1. Generate training data
 To generate training data use [make_data.py](./make_data.py). Ahem detector is
