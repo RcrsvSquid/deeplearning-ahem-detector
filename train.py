@@ -23,11 +23,9 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 --------------------------------------------------------------------------------------
 Note:
 Please build training/testing set before running this script.
-Make sure to create the local path that have been hardcoded in the following scripts,
-then execute
 
-	% python make_data_class_0.py
-	% python make_data_class_1.py
+	$ python make_data.py [class_0 directory]
+	$ python make_data.py [class_1 directory]
 ---------------------------------------------------------------------------------------
 
 """
