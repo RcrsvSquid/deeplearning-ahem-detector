@@ -136,19 +136,23 @@ if __name__ == "__main__":
 
 	print("Class_0 files:", len(class_0_files))
 	print("Class_1 files:", len(class_1_files))
+	numTrain0 = int(len(class_0_files) * 0.75)
+	numTrain1 = int(len(class_1_files) * 0.75)
+
+
 
 	# prepare training set
 	X_t = []
 	Y_t = []
 
-	for fn in class_0_files[:400]:
+	for fn in class_0_files[:numTrain0]:
 		img = io.imread(fn)
 		img = img.transpose((2, 0, 1))
 		img = img[:3, :, :]
 		X_t.append(img)
 		Y_t.append(0)
 
-	for fn in class_1_files[:40]:
+	for fn in class_1_files[:numTrain1]:
 		img = io.imread(fn)
 		img = img.transpose((2, 0, 1))
 		img = img[:3, :, :]
@@ -171,14 +175,14 @@ if __name__ == "__main__":
 	X_test = []
 	Y_test = []
 
-	for fn in class_0_files[400:len(class_0_files)]:
+	for fn in class_0_files[numTrain0:len(class_0_files)]:
 		img = io.imread(fn)
 		img = img.transpose((2, 0, 1))
 		img = img[:3, :, :]
 		X_test.append(img)
 		Y_test.append(0)
 
-	for fn in class_1_files[40:len(class_1_files)]:
+	for fn in class_1_files[numTrain1:len(class_1_files)]:
 		img = io.imread(fn)
 		img = img.transpose((2, 0, 1))
 		img = img[:3, :, :]
